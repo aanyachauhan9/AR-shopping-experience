@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cabinet Product Preview - Walmart Hackathon</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: #f5f5f5;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #111;
+      }
+
+      header {
+        background: white;
+        padding: 16px 24px;
+        font-size: 20px;
+        font-weight: 600;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .container {
+        max-width: 960px;
+        margin: 40px auto;
+        background: white;
+        padding: 24px;
+        box-sizing: border-box;
+        border-radius: 8px;
+      }
+
+      model-viewer {
+        width: 100%;
+        height: 500px;
+        background: #fafafa;
+        border: 1px solid #eee;
+        border-radius: 6px;
+      }
+
+      h1 {
+        font-size: 26px;
+        margin: 20px 0 10px;
+      }
+
+      p {
+        margin: 0 0 20px;
+        color: #555;
+        font-size: 16px;
+      }
+
+      .price {
+        font-size: 22px;
+        font-weight: bold;
+        color: #0071dc;
+        margin-bottom: 20px;
+      }
+
+      .buttons {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+
+      .buttons button {
+        flex: 1;
+        min-width: 140px;
+        padding: 12px 20px;
+        font-size: 16px;
+        background: #0071dc;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background 0.2s, transform 0.2s;
+      }
+
+      .buttons button:hover {
+        background: #005cb9;
+        transform: translateY(-2px);
+      }
+
+      .ar-button {
+        position: absolute;
+        bottom: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 12px 20px;
+        font-size: 16px;
+        background: #0071dc;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .buy-button {
+        margin-top: 30px;
+        width: 100%;
+        padding: 14px;
+        font-size: 18px;
+        background: #ffb700;
+        color: #111;
+        font-weight: bold;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background 0.2s, transform 0.2s;
+      }
+
+      .buy-button:hover {
+        background: #e5a700;
+        transform: translateY(-2px);
+      }
+
+      @media (max-width: 600px) {
+        .buttons {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>Walmart Hackathon - Cabinet Product Preview</header>
+
+    <!-- Laboratory Cabinet -->
+    <div class="container">
+      <model-viewer
+        id="labCabinet"
+        src="https://raw.githubusercontent.com/aanyachauhan9/cabinet_export/main/static_model.glb"
+        ar
+        ar-modes="scene-viewer webxr quick-look"
+        camera-controls
+        auto-rotate
+        shadow-intensity="1"
+        alt="Laboratory cabinet closed doors view"
+      >
+        <button slot="ar-button" class="ar-button">
+          View in your space
+        </button>
+      </model-viewer>
+
+      <h1>Laboratory Storage Cabinet</h1>
+      <div class="price">$189.00</div>
+      <p>Our high-quality laboratory cabinet keeps your workspace organized and professional. Choose closed, both doors open, or left door open configurations to match your needs.</p>
+
+      <div class="buttons">
+        <button onclick="setModel('labCabinet', 'https://raw.githubusercontent.com/aanyachauhan9/cabinet_export/main/laboratory_cabinet_storage__pbr_low_poly__free.glb')">Both Doors Open</button>
+        <button onclick="setModel('labCabinet', 'https://raw.githubusercontent.com/aanyachauhan9/cabinet_export/main/laboratory_cabinet.glb')">Left Door Only</button>
+        <button onclick="setModel('labCabinet', 'https://raw.githubusercontent.com/aanyachauhan9/cabinet_export/main/static_model.glb')">Closed (Reset)</button>
+      </div>
+
+      <button class="buy-button">Add to Cart</button>
+    </div>
+
+    <!-- Almirah Cabinet -->
+    <div class="container">
+      <model-viewer
+        id="almirahCabinet"
+        src="https://raw.githubusercontent.com/aanyachauhan9/cabinet_export/main/final_model.glb"
+        ar
+        ar-modes="scene-viewer webxr quick-look"
+        camera-controls
+        auto-rotate
+        shadow-intensity="1"
+        alt="Almirah cabinet closed doors view"
+      >
+        <button slot="ar-button" class="ar-button">
+          View in your space
+        </button>
+      </model-viewer>
+
+      <h1>Almirah Storage Cabinet</h1>
+      <div class="price">$249.00</div>
+      <p>Stylish almirah storage cabinet, perfect for modern homes or offices. Choose between closed, right door open, or right door closing configuration.</p>
+
+      <div class="buttons">
+        <button onclick="setModel('almirahCabinet', 'https://raw.githubusercontent.com/aanyachauhan9/cabinet_export/main/open_rightdoor.glb')">Right Door Open</button>
+        <button onclick="setModel('almirahCabinet', 'https://raw.githubusercontent.com/aanyachauhan9/cabinet_export/main/right_door_closing.glb')">Right Door Closing</button>
+        <button onclick="setModel('almirahCabinet', 'https://raw.githubusercontent.com/aanyachauhan9/cabinet_export/main/final_model.glb')">Closed (Reset)</button>
+      </div>
+
+      <button class="buy-button">Add to Cart</button>
+    </div>
+
+    <!-- Chair Product -->
+    <div class="container">
+      <model-viewer
+        id="chairProduct"
+        src="https://raw.githubusercontent.com/aanyachauhan9/cabinet_export/main/chair.glb"
+        ar
+        ar-modes="scene-viewer webxr quick-look"
+        camera-controls
+        auto-rotate
+        shadow-intensity="1"
+        alt="Chair product view"
+      >
+        <button slot="ar-button" class="ar-button">
+          View in your space
+        </button>
+      </model-viewer>
+
+      <h1>Modern Wooden Chair</h1>
+      <div class="price">$129.00</div>
+      <p>Elegant and sturdy wooden chair, ideal for any workspace or home. Choose between original and aged look.</p>
+
+      <div class="buttons">
+        <button onclick="setModel('chairProduct', 'https://raw.githubusercontent.com/aanyachauhan9/cabinet_export/main/chair.glb')">Original Chair</button>
+        <button onclick="setModel('chairProduct', 'https://raw.githubusercontent.com/aanyachauhan9/cabinet_export/main/Scene.glb')">Aged Chair</button>
+      </div>
+
+      <button class="buy-button">Add to Cart</button>
+    </div>
+
+    <script>
+      function setModel(viewerId, url) {
+        const viewer = document.getElementById(viewerId);
+        viewer.src = url + '?v=' + new Date().getTime(); // force refresh
+      }
+    </script>
+  </body>
+</html>
